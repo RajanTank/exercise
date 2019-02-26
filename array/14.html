@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Write a simple JavaScript program to join all elements of the following array into a string. 
+Sample array : myColor = ["Red", "Green", "White", "Black"];
+Expected Output : 
+"Red,Green,White,Black"
+"Red,Green,White,Black"
+"Red+Green+White+Black"
+-->
+<body>
+  <script>
+    function joinArray(arr,n){
+      return arr.join(n.toString()).toString();
+    }
+ 
+    let i = 0;
+    let arr = [];
+    while(true){
+      arr[i] = prompt('Enter Value: ');
+      if(arr[i] == ""){
+        arr.pop();
+        break;
+      }
+      i++;
+    }
+    let n = prompt('Enter Value using Array join :');
+    alert(joinArray(arr,n));
+
+  </script>
+</body>
+
+</html>

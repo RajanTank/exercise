@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<!--
+   Write a JavaScript program which accept a string as input and swap the case of each character. 
+   For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+-->
+<body>
+  <script>
+    'use strict';
+      function swapCase(str){
+          //here It will split character and assign method to it and then check for it case
+          //use map function  to assign method to each letter and check it
+          // '===' use for stricty check value 
+       let ans = str.split('').map(function(s){
+         return s === s.toUpperCase() ? s.toLowerCase() : s.toUpperCase();
+       }).join('');
+       return ans;
+     }
+ 
+    let str = prompt('Enter string:');
+     alert(swapCase(str));
+    
+  </script>
+</body>
+
+</html>

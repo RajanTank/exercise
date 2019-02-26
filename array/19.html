@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+      
+      function arrayElementPrint(n){
+        
+          let a = new Array(n);
+          
+          for (let i = 0; i < n; i++) {
+            a[i] = new Array(4);
+            console.log(`row ${i+1} `);
+              for (let j = 0; j < 4; j++) {
+                a[i][j] = +prompt(`Enter [${i}] [${j}]:`);
+                debugger;
+//                if(a[i][j] == ""){
+  //                i--;
+    //              j--;
+      //            a[i][j] = +prompt(`Enter [${i}] [${j}]:`);
+        //        }else{
+                console.log(a[i][j].toString());
+              
+              //}
+              }
+          }
+          
+        
+       
+      }
+        
+          
+    let n = prompt(' Enter How Many row in Array: ')
+    
+    arrayElementPrint(n)
+  </script>
+</body>
+
+</html>

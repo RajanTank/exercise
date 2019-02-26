@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Write a JavaScript function to check whether an `input` is an array or not.
+-->
+<body>
+  <script>
+    'use strict';
+     
+   
+    function isArrayOrNot(...args){
+      
+      for(let arg of args){
+        if(Array.isArray(arg)){
+          alert(`Input is Array`);
+        }else{
+          alert(`Input is Not Array`);
+        }
+      }
+    }   
+   
+   
+    let a = new Array();
+    let b = "hello", c =  [], d = 1235 ;
+    
+  
+    isArrayOrNot(a,b,c,d);      
+        
+        
+  </script>
+</body>
+
+</html>

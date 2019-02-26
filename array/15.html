@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Write a JavaScript program which accept a number as input and insert dashes (-) 
+    between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8
+-->
+<body>
+  <script>
+      
+    'use strict';
+    function insertValue(number){
+      let i=0;
+      for(i =1; i<number.length; i++){
+        debugger;
+        if((number.charAt(i-1) % 2 == 0) && (number.charAt(i) % 2  == 0)){
+        
+         number = number.slice(0, i) + "~" + number.slice(i);
+                  debugger;
+        }
+      }
+      return number;
+      
+    }
+    
+    let number = prompt('Enter Numbar:');
+    
+    alert(insertValue(number));
+    
+  </script>
+</body>
+
+</html>
