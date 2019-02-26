@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <!--
+      JavaScript program to check whether a matrix is a diagonal matrix or not. In linear algebra, 
+      a diagonal matrix is a matrix in which the entries outside the main diagonal are all zero (the diagonal 
+      from the upper left to the lower right).
+
+      for Example =>
+      [1, 0, 0], [0, 2, 0], [0, 0, 3] ]) = true
+      [1, 0, 0], [0, 2, 3], [0, 0, 3] ]) = false
+
+    -->
+  <head>
+    Exciese No :9
+  </head>
+
+  <body>
+    <script>
+        function checkMatrix(){
+        
+          let a = new Array(3);
+          
+          for (i = 0; i < 3; i++) {
+            a[i] = new Array(3);
+              for (j = 0; j < 3; j++) {
+                a[i][j] = +prompt(`Enter [${i}] [${j}]:`);
+              }
+          }
+          
+          
+          for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+              if(a[i][j] != 0   && i != j ){
+                  return false;   
+              }
+            }
+          }
+          return true;
+        }  
+      
+    alert(checkMatrix());
+    
+    </script>
+  
+  </body>
+
+</html>

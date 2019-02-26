@@ -1,0 +1,29 @@
+<html>
+  <!--
+    JavaScript program to rotate the elements left of a given array of integers of length 3.
+  -->
+   <head>
+      Exercise no : 5
+   </head> 
+
+   <body>
+    <script>
+      function rotate(arr){
+        arr.push(arr.shift());
+        return arr;
+      }
+      
+      let arr  =  [];
+
+      for(let i = 0; i<3; i++ ){
+        arr[i] = +prompt('enter value: ');
+        if(arr[i] == ' ')
+        {
+          alert('plz enter value');
+          i--;
+        }
+      }
+      alert(rotate(arr));
+    </script>
+   </body>
+</html>

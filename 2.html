@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+    JavaScript program to create a new string from a given string changing the position of first and last characters. 
+    The string length must be greater than or equal to 1
+-->
+<head>
+    Exercise no : 2
+</head>
+<body>
+  <script>
+    'use strict';
+     
+    function changingPosition(str){
+    if(str.length >1){
+          str = str[str.length-1] + str.slice(1,str.length-1) + str[0]; 
+          return str;
+      }
+      else{
+          alert('string size must greater than 1');
+      }
+    }
+    let str = prompt('Enter any string');
+    alert(changingPosition(str));
+  </script>
+</body>
+
+</html>

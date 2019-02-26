@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+    JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" 
+    then return the original string.
+-->
+<head>
+    Exercise no : 1
+</head>
+<body>
+  <script>
+    'use strict';
+     
+    function checkString(str){
+      
+      if(str.startsWith('Py') || str.startsWith('py') || str.startsWith('pY') || str.startsWith('PY') ){
+          return str;
+      }
+      else {
+         str = 'Py' + str ;
+         return str;
+      }
+    }
+
+    let str = prompt('Enter any string');
+    
+  </script>
+</body>
+
+</html>
+
+   
