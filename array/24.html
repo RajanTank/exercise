@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <!--
+  
+ Write a JavaScript function to remove a specific element from an array.
+
+  Test data :
+  console.log(remove_array_element([2, 5, 9, 6], 5));
+  [2, 9, 6]
+  -->
+  <head>
+    
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+      
+      function remove_array_element(arr,n){
+        let temp= [];
+        for(let i=0; i<arr.length-1; i++){
+          if(arr[i] == n){
+            arr.splice((arr.indexOf(arr[i])),1);
+          }
+        }
+        return arr;
+      }
+      
+      function getValue(arr){
+        
+        let i=0;
+        while(true){
+          arr[i] = prompt(`Enter Value for Array: `);
+          if(arr[i] == ""){
+              arr.pop();
+              break;
+          }
+          i++;
+        }
+      }
+      
+      let arr = [];
+      getValue(arr);
+      let n = prompt('Enter value you want to remove from array:');
+      alert(remove_array_element(arr,n));
+      
+      
+    </script>
+    
+  </body>
+
+</html>

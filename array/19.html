@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
-
+<!--
+  Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity)
+-->
 <body>
   <script>
     'use strict';
       
-      function arrayElementPrint(n){
-        
-          let a = new Array(n);
-          
-          for (let i = 0; i < n; i++) {
-            a[i] = new Array(4);
-            console.log(`row ${i+1} `);
-              for (let j = 0; j < 4; j++) {
-                a[i][j] = +prompt(`Enter [${i}] [${j}]:`);
-                debugger;
-//                if(a[i][j] == ""){
-  //                i--;
-    //              j--;
-      //            a[i][j] = +prompt(`Enter [${i}] [${j}]:`);
-        //        }else{
-                console.log(a[i][j].toString());
-              
-              //}
+    function removeDuplicate(){
+            
+            let arr = [];
+            let i=0;
+            while(true){
+              arr[i] = prompt('Enter Value: ');
+              if(arr[i] == ""){
+                arr.pop();
+                break;
               }
-          }
-          
+              i++;
+            }
+            
+            for(let j = 0; j<arr.length-1; j++){
+              
+              for(let k=j+1; k<arr.length; k++){
+                
+                if(arr[j].toLowerCase() === arr[k].toLowerCase()){
+            
+                  arr.splice(k,1);
+                }
+              }
+            }
+          alert(arr);    
+        }
         
-       
-      }
-        
-          
-    let n = prompt(' Enter How Many row in Array: ')
-    
-    arrayElementPrint(n)
+        removeDuplicate();
   </script>
 </body>
 
