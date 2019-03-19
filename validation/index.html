@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+  <div class="form_part" id="form_div">
+    <form name="details">
+        <h1>Enter Details</h1>
+        First Name:<br>
+        <input type="text" name="fName" class="invalid" id="firstName" placeholder="Enter First Name"  >
+        <span class="error" id="e_firstName"></span>
+        <br>
+        Last Name:<br>
+        <input type="text" name="lastName" class="invalid" id="lastName" placeholder="Enter Last Name"  >
+        <span class="error" id="e_lastName"></span>
+        <br>
+        Middle Name:<br>
+        <input type="text" name="middleName" class="invalid" id="middleName" placeholder="Enter Middle Name" >
+        <span class="error" id="e_middleName"></span>
+        <br>
+        Email:<br>
+        <input type="email" name="email" id="email" class="invalid" placeholder="Enter your email">
+        <span class="error" id="e_email"></span>
+        <br>
+        Password: <br>
+        <input type="password" name="password"  id="password" class="invalid" placeholder="Your Password">
+        <span class="error" id="e_password"></span>
+        <br>
+        Gender:<br>
+        <input type="radio" name="gender" value="Male" checked id="male"> Male<br>
+        <input type="radio" name="gender" value="Female" id="female"> Female<br>
+        <input type="radio" name="gender" value="Other" id="other">Other<br>
+        <br>
+        Hobbies:<br>
+        <input type="checkbox" value="Travelling" id="checkBox_1"> Travelling<br>
+        <input type="checkbox" value="Sport" id="checkBox_2"> Sport<br>
+        <input type="checkbox" value="Reading" id="checkBox_3"> Reading <br>
+        <input type="checkbox" value="Gameing" id="checkBox_4"> Gameing <br>
+        <input type="checkbox" value="Singing" id="checkBox_5"> Singing<br>
+        <br>
+        <input type="submit" value="Submit" id="submit" disabled title="Please fill All Details">
+        <input type="reset" value="Reset" id="reset">
+        <br>
+    </form>
+  </div>
+
+    <div id="table_div">
+      <table id="tablesData">
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>MiddleName</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Gender</th>
+          <th>HObbies</th>
+        </tr>
+      </table>
+    </div>
+
+   <script src="index.js"></script>
+</body>
+</html>
