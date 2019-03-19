@@ -1,0 +1,64 @@
+/* Styles go here */
+
+.form_part
+{
+  float:left;
+  padding:5px;
+  width: 40%;
+  padding: 10px;
+  display: inline;
+}
+input[type=text], input[type=password],input[type=email]{
+  width:60%;
+  border-radius: 5px;
+  border: 2px solid;
+  padding: 10px;
+  transition: 0.5s;
+}
+input{
+  margin: 10px;
+}
+th {
+     background-color: black;
+     color: white;
+}
+td,th{
+  border: 1px solid grey;
+  text-align: left;
+  padding: 7px;
+}
+input[type=text]:focus,input[type=password]:focus,input[type=email]:focus {
+  border: 3px solid #555;
+}
+#submit, #reset{
+  width: 40%;
+  margin-left:25px;
+  padding: 10px;
+  border-radius: 6px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+#form_div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+#table_div{
+  float:left;
+  padding: 10px;
+  margin-left:  20px;
+}
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.invalid{
+
+  border: 3px solid red ;
+}
+.error{
+  color: red;
+}
