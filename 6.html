@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    JavaScript program to find the larger value between the first or last and set all the other elements with that value.
+  -->
+  <head>
+      Exercise No :6
+  </head>
+
+  <body>
+    <script>
+      function check(){
+       
+       let arr = [] ;
+       let i = 0;
+       do{
+         
+         arr[i] = +prompt('enter number');
+         if(arr[i] == ' '){
+           arr.pop();
+           break;
+         }
+         i++;
+         
+       }while(true);
+       alert(arr);
+       let max = arr[0];
+       for(let j=0; j<=arr.length-1; j++){
+         
+         if(arr[j] > max){
+           max = arr[j];
+         }
+       }
+       for(let j = 0; j<=arr.length-1; j++){
+         arr[j]= max;
+       }
+       
+       alert(arr);
+      }
+      check();
+    </script>
+  </body>
+
+</html>

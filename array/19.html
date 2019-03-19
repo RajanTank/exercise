@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity)
+-->
+<body>
+  <script>
+    'use strict';
+      
+    function removeDuplicate(){
+            
+            let arr = [];
+            let i=0;
+            while(true){
+              arr[i] = prompt('Enter Value: ');
+              if(arr[i] == ""){
+                arr.pop();
+                break;
+              }
+              i++;
+            }
+            
+            for(let j = 0; j<arr.length-1; j++){
+              
+              for(let k=j+1; k<arr.length; k++){
+                
+                if(arr[j].toLowerCase() === arr[k].toLowerCase()){
+            
+                  arr.splice(k,1);
+                }
+              }
+            }
+          alert(arr);    
+        }
+        
+        removeDuplicate();
+  </script>
+</body>
+
+</html>

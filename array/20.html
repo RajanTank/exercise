@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        Write a JavaScript program to shuffle an array
+    -->
+  <head>
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+      
+    let arr = [];
+    
+    function getValue(){
+        
+          let i=0;
+          while(true){
+            arr[i] = prompt('Enter Value: ');
+            if(arr[i] == ""){
+              arr.pop();
+              break;
+            }
+            i++;
+          }
+        return arr.length;
+      }
+      
+      function getRandomValue(n){
+        
+        return Math.floor((Math.random() * n-1) + 1);
+      }
+  
+      function removeDuplicate(){
+           
+        let k=0;
+        let temp=0;
+        let n =  getValue();
+
+          
+          for(let j = 0; j<arr.length-1; j++){
+                
+                k = getRandomValue(n);
+                debugger;
+                temp = arr[j];
+                arr[j] = arr[k];
+                arr[k] = temp;
+                debugger;
+          }
+        alert(arr);
+      }
+      
+      removeDuplicate();
+      
+    </script>
+    
+  </body>
+
+</html>

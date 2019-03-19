@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <!--
+  
+ Write a JavaScript function to remove. 'null', '0', '""', 'false', 'undefined' and 'NaN' values 
+ from an array.
+  -->
+  <head>
+    
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+      let arr = [1,null,3,false,4,"",undefined,true,5];
+      function getValue(arr){
+        
+        let i=0;
+        while(true){
+          arr[i] = prompt(`Enter Value for Array: `);
+          if(arr[i] == ""){
+              arr.pop();
+              break;
+          }
+          i++;
+        }
+      }
+      
+      function checkValue(arr){
+        let tempArr = [];
+        let temp,j=0;
+    
+        for(let k=0; k<arr.length-1; k++){
+            temp = arr[k];
+            if(temp){
+              tempArr[j++] = temp; 
+            }
+        }
+        alert(tempArr);
+      }
+    
+      // getValue(arr);
+      
+       checkValue(arr);
+      
+    </script>
+    
+  </body>
+
+</html>

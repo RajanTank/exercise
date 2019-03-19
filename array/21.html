@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <!--
+  
+  There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays. 
+  Sample array : 
+  array1 = [1,0,2,3,4];
+  array2 = [3,5,6,7,8,13];
+  Expected Output : 
+  [4, 5, 8, 10, 12, 13] 
+  
+  -->
+  <head>
+    
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+      
+    let arr1 = [];
+    let arr2 = [];
+    getValue(arr1,'1');
+    getValue(arr2,'2');
+    
+  //  alert(arr1);
+  //  alert(arr2);
+    let final = sum(arr1.length,arr2.length);
+    
+    alert(final);
+    
+    function getValue(arr,n){
+        
+      let i=0;
+      while(true){
+        arr[i] = +prompt(`Enter Value for Array ${n}: `);
+        if(arr[i] == ""){
+            arr.pop();
+            break;
+        }
+        while(isNaN(arr[i])){
+            arr[i] = +prompt(`Enter valid Number value for Array ${n}  :`);
+              break;
+        }
+        i++;
+      }
+    }
+    
+    function sum(l1,l2){
+      if(l1>l2){
+        for(let i=0; i<l1; i++){
+          debugger;
+          arr1[i] += isNaN(arr2[i]) ? 0 : arr2[i];
+          debugger;
+        }
+        return arr1;
+      }else{
+        for(let i=0; i<l2; i++){
+          debugger;
+          arr2[i] += isNaN(arr1[i]) ? 0 : arr1[i];
+        }
+        return arr2;
+      }
+    }    
+
+    </script>
+    
+  </body>
+
+</html>

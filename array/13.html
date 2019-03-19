@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
+Test Data : 
+ console.log(first([7, 9, 0, -2])); 
+  console.log(first([],3));
+  console.log(first([7, 9, 0, -2],3));
+  console.log(first([7, 9, 0, -2],6));
+  console.log(first([7, 9, 0, -2],-3));
+  Expected Output : 
+  7
+  [] 
+  [7, 9, 0] 
+  [7, 9, 0, -2] 
+[] 
+-->
+<body>
+  <script>
+  function getElementFromArray(arr,n){
+      
+      let temp = [];
+      
+      if(n == ""){
+        
+        return a[0];
+        
+      }else if(n < 0 ){
+  
+        return temp;
+        
+      }else{
+        debugger;
+        for(let i=0,j=0; i<n; i++){
+          temp[j++] = arr[i];
+        }      
+      }
+      
+      return temp;
+    }
+    
+    
+    let i = 0;
+    let arr = [];
+    while(true){
+      arr[i] = +prompt('Enter Number:');
+      if(arr[i] == ""){
+        arr.pop();
+        break;
+        
+      }
+      i++;
+
+    }
+    let n = prompt('Enter No Value get from Array :');
+
+    alert(getElementFromArray(arr,n)); 
+  </script>
+</body>
+
+</html>

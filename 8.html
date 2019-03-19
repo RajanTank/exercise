@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<!--
+  JavaScript program to find the number of times to replace a given number with the sum of its digits until it converts to 
+  a single digit number.
+-->
+<body>
+  <script>
+   
+    function check(str){
+      
+      let str1= "";
+      let count=0;
+      let temp=0;
+      let flag = false;
+      while(true){
+        
+        if(flag == true){
+          break;
+        }
+        if(str.length % 2 == 0){
+              count++;
+              for(let j=0; j<str.length; j+=2){
+                temp = parseInt(str.charAt(j)) + parseInt(str.charAt(j+1));
+                str1 += temp;
+              }
+              str = str1;
+              str1 = "";
+        
+           if ( str.length == 1) {
+                  alert( "Number of steps required is " + count);
+                      flag = true;
+                      break;
+            }      
+    
+         }
+        else{
+              count++;
+              for(let j=0; j<str.length-1; j+=2){
+                temp = parseInt(str.charAt(j)) + parseInt(str.charAt(j+1));
+                debugger;
+                str1 += temp;
+              }
+              str = str1 + str.charAt(str.length-1);
+              str1 = "";
+        
+              if ( str.length == 1) {
+                  alert( "Number of steps required is " + count);
+                      flag = true;
+                      break;
+              }   
+        }
+      }
+    }
+    
+    let str= prompt('Enter any number: ');
+    check(str);
+  </script>
+</body>
+
+</html>

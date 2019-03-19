@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!--
+  JavaScript program to find the number which appears most in a given array of integers.
+-->
+<head>
+    Exercise no : 7
+</head>
+<body>
+  <script>
+   
+    function findMostAppearValue(){
+     
+      let arr = [];
+      let check = [];
+      let mostAppear, counter = 1, iterate=0;
+      let k=0;
+      let i=0;
+      let appear = new Map();
+        do{
+         
+         arr[i] = +prompt('enter number');
+         if(arr[i] == ' '){
+           arr.pop();
+           break;
+         }
+         i++;
+         
+        }while(true);
+       
+        for(let i=0; i<arr.length; i++){
+          
+          for(let j =i; j<arr.length;j++){
+              
+              if(arr[i]== arr[j])
+                iterate++;
+         
+              if(counter<iterate ){
+                  counter = iterate;
+                  appear.set(arr[i],counter);
+              }
+              else if(counter == iterate){
+                appear.set(arr[i],counter);
+              }
+          }
+          iterate=0;
+        }
+        for(let [key,value] of appear){
+          alert(`most appear value : ${key} is appear :${value} time `);
+        }
+    }
+    findMostAppearValue();
+  </script>
+</body>
+
+</html>

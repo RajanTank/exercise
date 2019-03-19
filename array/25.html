@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <!--
+  
+ Write a JavaScript function to move an array element from one position to another. 
+
+  Test Data :
+  console.log(move([10, 20, 30, 40, 50], 0, 2));
+  [20, 30, 10, 40, 50]
+  console.log(move([10, 20, 30, 40, 50], -1, -2));
+  [10, 20, 30, 50, 40]
+  -->
+  <head>
+    
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+      
+      function move(arr,num1,num2){
+        let old =  num1 < 0 ? num1+arr.length : num1 ;
+        let new_i = num2 < 0 ? num2+arr.length : num2 ;
+        
+        arr.splice(new_i, 0, arr.splice(old, 1));
+           return arr;
+      }
+      
+      function getValue(arr){
+        
+        let i=0;
+        while(true){
+          arr[i] = prompt(`Enter Value for Array: `);
+          if(arr[i] == ""){
+              arr.pop();
+              break;
+          }
+          i++;
+        }
+      }
+      
+      let arr = [];
+      getValue(arr);
+      let n1 = +prompt('Enter old index of array:');
+      let n2 = +prompt('Enter new index of array:');
+      alert(move(arr,n1,n2));
+      
+      
+    </script>
+    
+  </body>
+
+</html>

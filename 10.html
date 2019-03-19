@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <!--               
+    JavaScript program to reverse the order of the bits in a given integer.
+    for Example =>
+    234 -> 11101010 after reverse 87 -> 1010111
+  -->
+<body>
+  <head>
+      Exercise no :10
+  </head>
+  <script>
+    'use strict';
+   
+    function reverseOrder (num){   
+        let str  = ((num).toString(2));
+        let revstr = "";
+
+        for(let i = str.length-1; i>=0; i--){
+              revstr = revstr+ str[i];
+        }
+        alert(`Before Reversing Number: ${num}`);
+        alert(`Number Binary form : ${str}`);
+        alert(`After Reversing Number: ${parseInt(revstr,2)}`);
+          
+    }
+          
+    let num = +prompt('Enter Number: ');
+    reverseOrder(num);
+  
+  </script>
+</body>
+
+</html>
