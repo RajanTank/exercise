@@ -1,14 +1,12 @@
 
 
 const pass_Regex =  /^[\S]{8,}$/ ;
-//   this regex find when perfect metch    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0,9])(?=.*[!@#\$%\^&\*\[\]"\';:_\-<>\., =\+\/\\])[^\S].{8,}$/;
+//   this regex find when perfect match    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0,9])(?=.*[!@#\$%\^&\*\[\]"\';:_\-<>\., =\+\/\\])[^\S].{8,}$/;
 const email_Regex = /([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/igm;
 const name_Regex = /^[a-z]+$/ig;
 
         /*
-
           this method for every time when value right
-
         */
 
           let ForSubmit = () => {
@@ -20,8 +18,10 @@ const name_Regex = /^[a-z]+$/ig;
                   document.getElementById("submit").disabled = false;
                 }
           };
-      /*
-      this method check when method input somthing
+        /*
+        this method is commented bcz it is reference purpose when user input somthing 
+        that time this method is call
+        this functionality is implemented in the method forNameValidation()
 
           let onInputForName = (element) => {
             debugger;
@@ -53,119 +53,116 @@ const name_Regex = /^[a-z]+$/ig;
           }
           ForSubmit();
         };
-      */
+        */
         /*
-
          this method for any erro occur that display error
-
         */
         let displayError = (id,message) => {
          document.getElementById('e_'+id).innerHTML = message ;
         };
-    /*
-
-      this method for email validation
-
-    */
-      let forEmailValidation = (element) => {
-      if(element.target.value ){
-         if(!email_Regex.test(element.target.value)){
-              element.target.classList.add('invalid');
-              displayError(element.target.id,'Please Enter Valid Email');
-            }
-            else{
-              element.target.classList.remove('invalid');
-            }
-        }
-        else{
-              displayError(element.target.id,'Field Can\'t be Empty');
-            }
-            ForSubmit();
-      };
       /*
-
-      this method for password validaion
-
-    */
-      let forPasswordValidation = (element) => {
-        if(element.target.value){
-          if(!pass_Regex.test(element.target.value)){
-             element.target.classList.add('invalid');
-            displayError(element.target.id,'Password Must contains Uppercase letter, Lowercase latter, Digit or symbol');
+        this method for  validation of  email 
+      */
+        let forEmailValidation = (element) => {
+        if(element.target.value ){
+          if(!email_Regex.test(element.target.value)){
+                element.target.classList.add('invalid');
+                displayError(element.target.id,'Please Enter Valid Email');
+              }
+              else{
+                element.target.classList.remove('invalid');
+              }
           }
           else{
-             element.target.classList.remove('invalid');
-          }
-        }
-        else{
-            displayError(element.target.id,'Field Can\'t be Empty');
-          }
-          ForSubmit();
-      };
-    /*
-
-    this method foe when user re-entering data
-    */
-      let forFocusOnInput = (element) => {
-          if(element.target.classList.contains('invalid')){
-            debugger;
-            element.target.classList.remove('invalid');
-              document.getElementById('e_'+ element.target.id).innerHTML = '' ;
-          }
+                displayError(element.target.id,'Field Can\'t be Empty');
+              }
+              ForSubmit();
         };
-    /*
-    this method foe radio butto data get and return
-    */
-      let checkedRadio = (data) => {
-        for(let i=0; i<data.length; i++){
-          if(data[i].type === 'radio' && data[i].checked ){
-            return data[i].value;
-          }
-        }
-      };
+      /*
+        this method for password validation
+      */
+          let forPasswordValidation = (element) => {
+            if(element.target.value){
+              if(!pass_Regex.test(element.target.value)){
+                element.target.classList.add('invalid');
+                displayError(element.target.id,'Password Must contains Uppercase letter, Lowercase latter, Digit or symbol');
+              }
+              else{
+                element.target.classList.remove('invalid');
+              }
+            }
+            else{
+                displayError(element.target.id,'Field Can\'t be Empty');
+              }
+              ForSubmit();
+          };
+       /*
+        this method for when user re-entering data
+        that time the error message will be disappear 
+      */
+          let forFocusOnInput = (element) => {
+              if(element.target.classList.contains('invalid')){
+                debugger;
+                element.target.classList.remove('invalid');
+                  document.getElementById('e_'+ element.target.id).innerHTML = '' ;
+              }
+            };
+      /*
+          this method for getting checked radio button return
+      */
+          let checkedRadio = (data) => {
+            for(let i=0; i<data.length; i++){
+              if(data[i].type === 'radio' && data[i].checked ){
+                return data[i].value;
+              }
+            }
+          };
       /*
         this method for checkbox checked data get and store in array and return array
       */
-    let checkedCheckbox = (data) => {
-        let value =  Array();
-        for(let i=0; i<data.length;  i++){
-          if(data[i].type === 'checkbox' && data[i].checked){
-            value.push(data[i].value);
-          }
-        }
-      return value;
-    };
-    /*
-
-      this method for when user click submit button
-
-    */
-      let submitData = () => {
-         submit.disabled = true;
-         let data = document.getElementsByTagName('input');
-        /*  let user =  new AssignData(firstName.value,lastName.value,middleName.value,email.value,
-        //    password.value,checkedRadio(data),checkedCheckbox(data));
-          //  console.log(checkedRadio(data));
-            users.push(user);
-            console.log(users);
-            debugger;
-            let row = '<tr>\n  <td>' + users.firstName + '</td>\n  <td>' + users.lastname + '</td>\
-            \n  <td>' + users.middlename + '</td>\n  <td>' + users.email + '</td>\
-            \n  <td>' + users.password + '</td>\n  <td>' + users.gender + '</td>\
-            \n  <td>' + users.hobbies + '</td>\n</tr>' ;
-            tablesData.innerHTML+=row;
-          */
-          let row = '<tr>\n  <td>' + firstName.value + '</td>\n  <td>' + lastName.value + '</td>\
-                \n  <td>' + middleName.value + '</td>\n  <td>' + email.value + '</td>\
-                \n  <td>' + password.value + '</td>\n  <td>' + checkedRadio(data) + '</td>\
-                \n  <td>' + checkedCheckbox(data) + '</td>\n</tr>' ;
-                tablesData.innerHTML+=row;
-       };
+          let checkedCheckbox = (data) => {
+              let value =  Array();
+              for(let i=0; i<data.length;  i++){
+                if(data[i].type === 'checkbox' && data[i].checked){
+                  value.push(data[i].value);
+                }
+              }
+            return value;
+          };
       /*
-          forexercise of object using
+      this method for when user click submit button
+      */
+          let submitData = () => {
+            submit.disabled = true;
+            let data = document.getElementsByTagName('input');
+            /*  
+                this code is commented because this code was use when we want to store 
+                form data in the any object that time this code use 
+                this code is not perfect some change require
 
+                let user =  new AssignData(firstName.value,lastName.value,middleName.value,email.value,
+                password.value,checkedRadio(data),checkedCheckbox(data));
+                console.log(checkedRadio(data));
+                users.push(user);
+                console.log(users);
+                debugger;
+                let row = '<tr>\n  <td>' + users.firstName + '</td>\n  <td>' + users.lastname + '</td>\
+                \n  <td>' + users.middlename + '</td>\n  <td>' + users.email + '</td>\
+                \n  <td>' + users.password + '</td>\n  <td>' + users.gender + '</td>\
+                \n  <td>' + users.hobbies + '</td>\n</tr>' ;
+                tablesData.innerHTML+=row;
+              */
+              let row = '<tr>\n  <td>' + firstName.value + '</td>\n  <td>' + lastName.value + '</td>\
+                    \n  <td>' + middleName.value + '</td>\n  <td>' + email.value + '</td>\
+                    \n  <td>' + password.value + '</td>\n  <td>' + checkedRadio(data) + '</td>\
+                    \n  <td>' + checkedCheckbox(data) + '</td>\n</tr>' ;
+                    tablesData.innerHTML+=row;
+          };
+      /*
+          for exercise of object using
+          in below code will intialize object using class 
 
-         class AssignData {
+          class AssignData {
            constructor(firstName,lastName,middleName,email,password,gender,hobbies){
              this.firstName = firstName;
              this.lastName = lastName;
@@ -177,50 +174,41 @@ const name_Regex = /^[a-z]+$/ig;
            }
          }
         let users = [];
-
       */
-    /*
-
-      this method for name validation
-
-    */
-
-
-    let forNameValidation = (element) => {
-      if(element.target.value){
-        if(!name_Regex.test(element.target.value)){
-              element.target.classList.add('invalid')
-            displayError(element.target.id,'Please Enter Alphabet only');
-        }
-        else{
-          element.target.classList.remove('invalid');
-        }
-        ForSubmit();
-      }
-      else{
-          displayError(element.target.id,'Field Can\'t be Empty');
-      }
-    };
+       /*
+        this method for name validation
+      */
+          let forNameValidation = (element) => {
+            if(element.target.value){
+              if(!name_Regex.test(element.target.value)){
+                    element.target.classList.add('invalid')
+                  displayError(element.target.id,'Please Enter Alphabet only');
+              }
+              else{
+                element.target.classList.remove('invalid');
+              }
+              ForSubmit();
+            }
+            else{
+                displayError(element.target.id,'Field Can\'t be Empty');
+            }
+          };
       /*
-
-      assign handler to each input element
-
+       assign handler to each input element
       */
+      firstName.addEventListener("blur",forNameValidation);
+      firstName.addEventListener("focus",forFocusOnInput);
 
+      lastName.addEventListener("blur",forNameValidation);
+      lastName.addEventListener("focus",forFocusOnInput);
 
-    firstName.addEventListener("blur",forNameValidation);
-    firstName.addEventListener("focus",forFocusOnInput);
+      middleName.addEventListener("blur",forNameValidation);
+      middleName.addEventListener("focus",forFocusOnInput);
 
-    lastName.addEventListener("blur",forNameValidation);
-    lastName.addEventListener("focus",forFocusOnInput);
+      email.addEventListener("blur",forEmailValidation);
+      email.addEventListener("focus",forFocusOnInput);
 
-    middleName.addEventListener("blur",forNameValidation);
-    middleName.addEventListener("focus",forFocusOnInput);
+      password.addEventListener("blur",forPasswordValidation);
+      password.addEventListener("focus",forFocusOnInput);
 
-    email.addEventListener("blur",forEmailValidation);
-    email.addEventListener("focus",forFocusOnInput);
-
-    password.addEventListener("blur",forPasswordValidation);
-    password.addEventListener("focus",forFocusOnInput);
-
-    submit.addEventListener("click",submitData);
+      submit.addEventListener("click",submitData);
